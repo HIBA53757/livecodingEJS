@@ -1,0 +1,33 @@
+<%- include("../partials/header") %>
+
+<h2>Ressources de formation</h2>
+
+<p>Total : <%= resources.length %> ressources</p>
+
+<div class="resources">
+
+    <% resources.forEach(resource => { %>
+
+        <article>
+
+            <h3><%= resource.title %></h3>
+
+            <p>Catégorie : <%= resource.category %></p>
+
+            <p>Niveau : <%= resource.level %></p>
+
+            <p>Format : <%= resource.format %></p>
+
+            <p>Durée : <%= resource.durationMinutes %> minutes</p>
+
+            <% if (resource.isRequired) { %>
+                <span>Obligatoire</span>
+            <% } %>
+
+        </article>
+
+    <% }) %>
+
+</div>
+
+<%- include("../partials/footer") %>
